@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Handle company customization
         if (companyParam) {
             const cleanCompany = decodeURIComponent(companyParam);
-            greetingMessage += `Speziell für das Team von **${cleanCompany}** habe ich meine relevantesten Projekte und Systemkonfigurationen hervorgehoben.`;
+            greetingMessage += `Speziell für das Team von **${cleanCompany}** habe ich meine relevantesten Fähigkeiten hervorgehoben.`;
             
             // Determine tech matching category based on company name (for highlighting)
             const compLower = cleanCompany.toLowerCase();
@@ -65,8 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Handle job role customization
         if (jobParam) {
             const cleanJob = decodeURIComponent(jobParam);
-            heroSubtitle.textContent = cleanJob;
-            greetingMessage += ` Passend zu der ausgeschriebenen Position als **${cleanJob}** finden Sie unten meine entsprechenden Projektnachweise.`;
+            greetingMessage += ` Ich habe großes Interesse an der ausgeschriebenen Position als **${cleanJob}**.`;
             
             const jobLower = cleanJob.toLowerCase();
             if (jobLower.includes("security") || jobLower.includes("network") || jobLower.includes("firewall") || jobLower.includes("vpn") || jobLower.includes("openbsd")) {
@@ -99,46 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Highlight project cards
-        const projectCards = document.querySelectorAll(".project-card");
-        projectCards.forEach(card => {
-            const type = card.getAttribute("data-project-type");
-            // Mapping project types to tech categories
-            let isMatch = false;
-            if (matchedCategory === "linux" && type === "security") isMatch = true;
-            if (matchedCategory === "network" && type === "security") isMatch = true;
-            if (matchedCategory === "privacy" && type === "privacy") isMatch = true;
-            if (matchedCategory === "automation" && type === "automation") isMatch = true;
-
-            if (isMatch) {
-                card.classList.add("highlighted");
-                card.style.order = "-1";
-            }
-        });
     }
-
-    // 4. Portfolio Filter Bar Logic
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projectCards = document.querySelectorAll(".project-card");
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            // Remove active class
-            filterButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-
-            const filterValue = btn.getAttribute("data-filter");
-
-            projectCards.forEach(card => {
-                const type = card.getAttribute("data-project-type");
-                if (filterValue === "all" || type === filterValue) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        });
-    });
 
     // 5. Simulated Recruiter Web Analytics (Logging telemetry safely)
     const logVisitTelemetry = () => {
