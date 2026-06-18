@@ -124,15 +124,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const requestBtn = document.getElementById("request-docs-btn");
     if (requestBtn) {
         requestBtn.addEventListener("click", () => {
-            requestBtn.innerHTML = "<i class='fa-solid fa-circle-notch fa-spin'></i> Anfrage wird gesendet...";
-            requestBtn.disabled = true;
+            requestBtn.innerHTML = "<i class='fa-solid fa-circle-notch fa-spin'></i> Bereite E-Mail vor...";
             
             setTimeout(() => {
-                requestBtn.innerHTML = "<i class='fa-solid fa-circle-check'></i> Anfrage gesendet!";
-                requestBtn.classList.remove("btn-primary");
-                requestBtn.classList.add("btn-secondary");
-                alert("Vielen Dank für Ihr Interesse! Die vollständigen Bewerbungsunterlagen (inkl. Zeugnisse und Lebenslauf) werden Ihnen in Kürze an die angegebene E-Mail-Adresse zugestellt.");
-            }, 1500);
+                let bodyText = "Sehr geehrter Herr Rudnicki,\n\nbitte senden Sie mir Ihr vollständiges Bewerbungs-Paket als PDF-Dokument zu.\n\nMit freundlichen Grüßen\n";
+                if (recruiterParam) bodyText += decodeURIComponent(recruiterParam) + "\n";
+                if (companyParam) bodyText += decodeURIComponent(companyParam);
+                
+                const mailtoLink = `mailto:daniel.rudnicki@gmx.de?subject=${encodeURIComponent("Anforderung Bewerbungs-Paket (PDF)")}&body=${encodeURIComponent(bodyText)}`;
+                window.location.href = mailtoLink;
+                
+                requestBtn.innerHTML = "<i class='fa-solid fa-file-shield'></i> Unterlagen anfordern";
+            }, 500);
         });
     }
 
@@ -142,16 +145,20 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const submitBtn = contactForm.querySelector("button[type='submit']");
-            submitBtn.innerHTML = "<i class='fa-solid fa-circle-notch fa-spin'></i> Wird übertragen...";
-            submitBtn.disabled = true;
+            submitBtn.innerHTML = "<i class='fa-solid fa-circle-notch fa-spin'></i> Bereite E-Mail vor...";
 
             setTimeout(() => {
-                submitBtn.innerHTML = "<i class='fa-solid fa-circle-check'></i> Erfolgreich gesendet!";
-                alert("Ihre Nachricht wurde erfolgreich an Daniel Rudnicki übermittelt. Sie erhalten in Kürze eine Rückmeldung.");
-                contactForm.reset();
-                submitBtn.disabled = false;
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const subject = document.getElementById("subject").value || "Kontaktanfrage über Portfolio";
+                const message = document.getElementById("message").value;
+
+                const bodyText = `Name: ${name}\nE-Mail: ${email}\n\nNachricht:\n${message}`;
+                const mailtoLink = `mailto:daniel.rudnicki@gmx.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+                window.location.href = mailtoLink;
+
                 submitBtn.innerHTML = "<i class='fa-solid fa-paper-plane'></i> Nachricht senden";
-            }, 1200);
+            }, 500);
         });
     }
 });
