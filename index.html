@@ -3,284 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Rudnicki | Open-Source & Network Security Specialist</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main Style Sheet -->
+    <title>Daniel Rudnicki | IT Portfolio</title>
+    <meta name="description" content="Portfolio von Daniel Rudnicki - Systemadministrator und Security Specialist">
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons expected by styles.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Background Glow Effects -->
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
+    <div class="glass-bg"></div>
+    <main class="container">
+        <header class="hero">
+            <div class="greeting" id="dynamic-greeting">Willkommen!</div>
+            <h1 class="title">Daniel Rudnicki</h1>
+            <h2 class="subtitle">Open-Source & Network Security Specialist</h2>
+            <p class="description">
+                Linux System Härtung | OpenBSD VPN-Gateways & Edge-Firewalling | Privacy & Virtualisierung
+            </p>
+        </header>
 
-    <!-- Navigation Header -->
-    <header class="main-header">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-accent">&lt;</span> DR.ADMIN <span class="logo-accent">/&gt;</span>
-            </a>
-            <nav class="nav-menu">
-                <a href="#about" class="nav-link active">Über mich</a>
-                <a href="#skills" class="nav-link">Kompetenzen</a>
-                <a href="#experience" class="nav-link">Werdegang</a>
-                <a href="#contact" class="nav-link">Kontakt</a>
-            </nav>
-            <div class="nav-cta">
-                <a href="#contact" class="btn btn-outline btn-sm">Bewerbung anfordern</a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero & Personalization Section -->
-        <section id="about" class="hero-section">
-            <div class="section-container hero-container">
-                <div class="hero-content">
-                    <!-- Dynamic Greeting Badge (personalized via JS) -->
-                    <div class="greeting-badge" id="dynamic-badge" style="display: none;">
-                        <span class="badge-dot"></span>
-                        <span class="badge-text" id="dynamic-badge-text">Bewerber-Zugang</span>
-                    </div>
-                    
-                    <h1 class="hero-title">
-                        Hallo, ich bin <span class="text-gradient">Daniel Rudnicki</span>
-                    </h1>
-                    <h2 class="hero-subtitle" id="dynamic-subtitle">Open-Source & Network Security Specialist</h2>
-                    
-                    <!-- Dynamic Personalized Message -->
-                    <div class="personalization-banner" id="personalization-box" style="display: none;">
-                        <p class="banner-text" id="personalization-text">
-                            Willkommen!
-                        </p>
-                    </div>
-
-                    <p class="hero-description">
-                        Spezialist für Systemhärtung, Linux/Unix-Administration und Netzwerk-Integrität. Über zwei Jahrzehnte Praxis in der Konzeptionierung und Absicherung quelloffener Infrastrukturen, restriktiver Firewalls und datenschutzkonformer Architekturen.
-                    </p>
-                    
-                    <div class="hero-actions">
-                        <a href="#contact" class="btn btn-secondary">Kontakt aufnehmen</a>
-                    </div>
-                </div>
-
-                <div class="hero-stats-card glass-card">
-                    <div class="card-glow"></div>
-                    <div class="logo-container">
-                        <img src="daniel_rudnicki_logo.png" alt="Daniel Rudnicki Signature Logo" class="profile-logo">
-                    </div>
-                    <div class="stats-header">
-                        <span class="status-indicator online"></span>
-                        <h3>System Status: Active</h3>
-                    </div>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-value">24+</span>
-                            <span class="stat-label">Jahre OS-Fokus</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">Level 2</span>
-                            <span class="stat-label">CIS-Härtungskonform</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">100%</span>
-                            <span class="stat-label">Open-Source Härtung</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">VLAN/VPN</span>
-                            <span class="stat-label">Netzwerk-Segmentierung</span>
-                        </div>
-                    </div>
-                </div>
+        <section class="tech-stack">
+            <h3>Technologie Stack</h3>
+            <div class="skills-grid" id="dynamic-skills">
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">OpenBSD</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Bash</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Firewalling</span>
+                <span class="skill-tag">Proxmox</span>
+                <span class="skill-tag">Ansible</span>
             </div>
         </section>
 
-        <!-- Technical Skills Section -->
-        <section id="skills" class="skills-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag">Fähigkeiten</span>
-                    <h2 class="section-title">Technische Expertise</h2>
-                    <p class="section-desc">Ein Überblick über meine Kernkompetenzen in der Administration, Absicherung und Prozessstabilität.</p>
+        <section class="projects">
+            <h3>Netzwerk & Architektur Referenzen</h3>
+            <div class="projects-grid" id="dynamic-projects">
+                <!-- Dynamically populated from script.js -->
+                <div class="project-card">
+                    <h4>PfSense/OPNsense Edge Gateway</h4>
+                    <p>Konfiguration und Deployment einer hochverfügbaren Firewall-Lösung mit Multi-WAN Failover.</p>
                 </div>
-
-                <div class="skills-grid">
-                    <div class="skill-category-card glass-card" data-tech-category="linux">
-                        <div class="category-icon"><i class="fa-brands fa-linux"></i></div>
-                        <h3>Linux & Serverlandschaften</h3>
-                        <p>Distributionen-übergreifende Administration (Debian, RHEL, Ubuntu), OpenBSD und Solaris. CIS-konforme Systemhärtung (Level 2) und dateibasierte Berechtigungskonzepte.</p>
-                        <div class="skill-tags">
-                            <span class="tag">Linux Servers</span>
-                            <span class="tag">OpenBSD</span>
-                            <span class="tag">Solaris</span>
-                            <span class="tag">CIS Hardening</span>
-                            <span class="tag">SELinux</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card glass-card" data-tech-category="network">
-                        <div class="category-icon"><i class="fa-solid fa-network-wired"></i></div>
-                        <h3>Sicherheit & Netzwerke</h3>
-                        <p>Konzeption restriktiver Edge-Firewalls und VPN-Gateways mit OpenBSD (PF/CARP/IPsec), OPNsense, pfSense und VyOS. VLAN-Segmentierung, VPN/IPsec Tunnel, Packet Inspections via Wireshark und tcpdump.</p>
-                        <div class="skill-tags">
-                            <span class="tag">OpenBSD (PF)</span>
-                            <span class="tag">Edge-Firewalling</span>
-                            <span class="tag">VPN-Gateways</span>
-                            <span class="tag">OPNsense</span>
-                            <span class="tag">VyOS</span>
-                            <span class="tag">Wireshark</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card glass-card" data-tech-category="privacy">
-                        <div class="category-icon"><i class="fa-solid fa-user-shield"></i></div>
-                        <h3>Privacy & Virtualisierung</h3>
-                        <p>Aufbau privater Virtualisierungsumgebungen mit Proxmox VE und Docker. Härtung von GrapheneOS, Integration von Tails OS und TOR-Routing.</p>
-                        <div class="skill-tags">
-                            <span class="tag">Proxmox VE</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">GrapheneOS</span>
-                            <span class="tag">Tails OS</span>
-                            <span class="tag">TOR Network</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card glass-card" data-tech-category="automation">
-                        <div class="category-icon"><i class="fa-solid fa-gears"></i></div>
-                        <h3>Qualitätsmanagement & Automatisierung</h3>
-                        <p>Strukturierte Qualitätssicherungsverfahren zur Fehlerreduktion und Einhaltung von QM-Vorgaben. Automatisierungskonzepte mit Python, C++, Bash-Skripten, PHP und Perl.</p>
-                        <div class="skill-tags">
-                            <span class="tag">Python / C++</span>
-                            <span class="tag">Bash Scripting</span>
-                            <span class="tag">QM / Fehleranalyse</span>
-                            <span class="tag">Perl / PHP</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Experience Timeline Section -->
-        <section id="experience" class="experience-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag">Werdegang</span>
-                    <h2 class="section-title">Beruflicher Werdegang</h2>
-                    <p class="section-desc">Konsequente Praxiserfahrung in Systemadministration, Qualitätssicherung und industrieller Automatisierung.</p>
-                </div>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2000 - Heute</span>
-                            <h3>System-, Edge-Firewall- & VPN-Administration</h3>
-                            <p class="timeline-company">Private non-monetäre Großprojekte (Vollzeitfokus 2012–2014)</p>
-                            <p>Aufbau und Absicherung komplexer Linux-Serverlandschaften sowie redundanter Edge-Firewalls und VPN-Gateways auf OpenBSD-Basis (PF, IPsec/WireGuard). Implementierung restriktiver OPNsense/VyOS-Systeme, VLAN-Segmentierung und kontinuierliche Protokollanalyse.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2014 - 2021</span>
-                            <h3>Qualitätssicherung & Qualitätsmanagement</h3>
-                            <p class="timeline-company">SVB Personalleasing (Automobilfertigungslinien)</p>
-                            <p>Strukturierte Einhaltung strenger Qualitätsvorgaben, Fehlerreduktion und Qualitätssicherungsmaßnahmen zur Prozessstabilität in Fertigungslinien.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2010 - 2012</span>
-                            <h3>Roboterprogrammierung & Automatisierung</h3>
-                            <p class="timeline-company">Atlantec Braunschweig</p>
-                            <p>Hardwarenahe Steuerungscode-Entwicklung für Industrieroboter und Anpassung komplexer automatisierter Bewegungsabläufe.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact & Document Request Section -->
-        <section id="contact" class="contact-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag">Verbindung</span>
-                    <h2 class="section-title">Bewerbungsunterlagen & Kontakt</h2>
-                    <p class="section-desc">Fordern Sie meine vollständigen Zeugnisse und Lebensläufe an oder treten Sie direkt in Kontakt.</p>
-                </div>
-
-                <div class="contact-grid">
-                    <div class="contact-info-panel glass-card">
-                        <h3>Kontaktinformationen</h3>
-                        <p>Daniel Rudnicki ist bereit für anspruchsvolle Aufgaben in der Systemintegration, Härtung und Netzwerkabsicherung.</p>
-                        
-                        <div class="info-list">
-                            <div class="info-item">
-                                <i class="fa-solid fa-envelope"></i>
-                                <span>daniel.rudnicki@gmx.de</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Aurich / Norden (Ostfriesland), Deutschland</span>
-                            </div>
-                        </div>
-
-                        <!-- Action buttons for document download request -->
-                        <div class="document-download-box">
-                            <h4>Bewerbungs-Paket anfordern</h4>
-                            <p class="small-text">Vollständiger Lebenslauf, Zertifikate und Zeugnisse als PDF-Dokument.</p>
-                            <button id="request-docs-btn" class="btn btn-primary btn-block">
-                                <i class="fa-solid fa-file-shield"></i> Unterlagen anfordern
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="contact-form-panel glass-card">
-                        <form id="contact-form" class="custom-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="name">Ihr Name</label>
-                                    <input type="text" id="name" required placeholder="z. B. Nicole Nellen">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">E-Mail-Adresse</label>
-                                    <input type="email" id="email" required placeholder="ihre.adresse@firma.de">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Betreff</label>
-                                <input type="text" id="subject" placeholder="z. B. Bewerbung als IT-Systemadministrator">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Nachricht</label>
-                                <textarea id="message" rows="5" required placeholder="Sehr geehrter Herr Rudnicki..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fa-solid fa-paper-plane"></i> Nachricht senden
-                            </button>
-                        </form>
-                    </div>
+                <div class="project-card">
+                    <h4>OpenBSD IPsec VPN</h4>
+                    <p>Sichere Standortvernetzung via IKEv2 und strikten Paketfiltern (PF).</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="section-container">
-            <p>&copy; 2026 Daniel Rudnicki. Alle Rechte vorbehalten. | <a href="#about">Impressum</a> | <a href="#about">Datenschutz</a></p>
-        </div>
-    </footer>
-
-    <!-- Main JavaScript File -->
     <script src="script.js"></script>
 </body>
 </html>
