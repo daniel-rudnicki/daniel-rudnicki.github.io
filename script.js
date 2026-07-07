@@ -16,19 +16,29 @@ function initPortfolio() {
     
     console.log(`Parsed params - Company: ${company}, Recruiter: ${recruiter}`);
 
-    const greetingElement = document.getElementById('dynamic-greeting');
+    const personalizationBox = document.getElementById('personalization-box');
+    const personalizationText = document.getElementById('personalization-text');
+    const dynamicBadge = document.getElementById('dynamic-badge');
+    const dynamicBadgeText = document.getElementById('dynamic-badge-text');
 
-    if (greetingElement) {
-        // Dynamic greeting based on parameters
+    if (personalizationBox && personalizationText) {
         if (company && recruiter) {
-            greetingElement.textContent = `Hallo ${recruiter}, willkommen ${company} Team!`;
+            personalizationText.textContent = `Hallo ${recruiter}, willkommen ${company} Team! Schön, dass ihr hier seid.`;
+            personalizationBox.style.display = 'block';
         } else if (company) {
-            greetingElement.textContent = `Willkommen ${company} Team!`;
+            personalizationText.textContent = `Willkommen ${company} Team! Schön, dass ihr hier seid.`;
+            personalizationBox.style.display = 'block';
         } else if (recruiter) {
-            greetingElement.textContent = `Hallo ${recruiter}!`;
+            personalizationText.textContent = `Hallo ${recruiter}! Schön, dass du hier bist.`;
+            personalizationBox.style.display = 'block';
+        }
+
+        if (company && dynamicBadge && dynamicBadgeText) {
+            dynamicBadgeText.textContent = `${company} Zugang`;
+            dynamicBadge.style.display = 'inline-flex';
         }
     } else {
-        console.warn("Element with ID 'dynamic-greeting' not found.");
+        console.warn("Personalization elements not found.");
     }
 }
 
