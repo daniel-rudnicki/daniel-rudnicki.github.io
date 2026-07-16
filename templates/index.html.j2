@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Rudnicki | Open-Source & Network Security Specialist</title>
-    <link rel="icon" type="image/png" href="daniel_rudnicki_logo.png">
+    <title>Daniel Rudnicki | {{ subtitle }}</title>
+    <link rel="icon" type="image/png" href="/static/daniel_rudnicki_logo.png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +12,9 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Style Sheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
-<body>
+<body class="{{ theme_class }}">
     <!-- Background Glow Effects -->
     <div class="glow-orb orb-1"></div>
     <div class="glow-orb orb-2"></div>
@@ -42,26 +42,36 @@
         <section id="about" class="hero-section">
             <div class="section-container hero-container">
                 <div class="hero-content">
-                    <!-- Dynamic Greeting Badge (personalized via JS) -->
-                    <div class="greeting-badge" id="dynamic-badge" style="display: none;">
+                    <!-- Dynamic Greeting Badge -->
+                    {% if company %}
+                    <div class="greeting-badge" id="dynamic-badge" style="display: inline-flex;">
                         <span class="badge-dot"></span>
-                        <span class="badge-text" id="dynamic-badge-text">Bewerber-Zugang</span>
+                        <span class="badge-text" id="dynamic-badge-text">{{ company }} Zugang</span>
                     </div>
+                    {% endif %}
                     
                     <h1 class="hero-title">
                         Hallo, ich bin <span class="text-gradient">Daniel Rudnicki</span>
                     </h1>
-                    <h2 class="hero-subtitle" id="dynamic-subtitle">Open-Source & Network Security Specialist</h2>
+                    <h2 class="hero-subtitle" id="dynamic-subtitle">{{ subtitle }}</h2>
                     
                     <!-- Dynamic Personalized Message -->
-                    <div class="personalization-banner" id="personalization-box" style="display: none;">
+                    {% if recruiter or company %}
+                    <div class="personalization-banner" id="personalization-box" style="display: block;">
                         <p class="banner-text" id="personalization-text">
-                            Willkommen!
+                            {% if recruiter and company %}
+                            Hallo {{ recruiter }}, willkommen {{ company }} Team! Schön, dass ihr hier seid.
+                            {% elif company %}
+                            Willkommen {{ company }} Team! Schön, dass ihr hier seid.
+                            {% elif recruiter %}
+                            Hallo {{ recruiter }}! Schön, dass du hier bist.
+                            {% endif %}
                         </p>
                     </div>
+                    {% endif %}
 
-                    <p class="hero-description">
-                        Spezialist für Systemhärtung, Linux/Unix-Administration und Netzwerk-Integrität. Über zwei Jahrzehnte Praxis in der Konzeptionierung und Absicherung quelloffener Infrastrukturen, restriktiver Firewalls und datenschutzkonformer Architekturen.
+                    <p class="hero-description" id="dynamic-description">
+                        {{ description }}
                     </p>
                     
                     <div class="hero-actions">
@@ -72,7 +82,7 @@
                 <div class="hero-stats-card glass-card">
                     <div class="card-glow"></div>
                     <div class="logo-container">
-                        <img src="daniel_rudnicki_logo.png" alt="Daniel Rudnicki Signature Logo" class="profile-logo">
+                        <img src="/static/daniel_rudnicki_logo.png" alt="Daniel Rudnicki Signature Logo" class="profile-logo">
                     </div>
                     <div class="stats-header">
                         <span class="status-indicator online"></span>
@@ -280,8 +290,5 @@
             <p>&copy; 2026 Daniel Rudnicki. Alle Rechte vorbehalten. | <a href="#about">Impressum</a> | <a href="#about">Datenschutz</a></p>
         </div>
     </footer>
-
-    <!-- Main JavaScript File -->
-    <script src="script.js?v=2"></script>
 </body>
 </html>
