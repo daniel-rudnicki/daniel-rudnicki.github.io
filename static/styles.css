@@ -886,16 +886,20 @@ body.theme-it .glass-bg {
    FOOTER
    ========================================================================== */
 .main-footer {
+    background-color: var(--bg-card);
     border-top: 1px solid var(--border-color);
-    background: #060a14;
-    padding: 40px 0;
+    padding: 2rem 0;
     text-align: center;
     color: var(--text-muted);
     font-size: 0.9rem;
 }
-
+.main-footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 .main-footer a:hover {
-    color: var(--text-primary);
+    color: var(--primary);
 }
 
 /* ==========================================================================
