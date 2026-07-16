@@ -394,23 +394,23 @@ body.theme-verwaltung .glass-bg {
     background: radial-gradient(circle at center, rgba(51, 65, 85, 0.05) 0%, rgba(248, 250, 252, 1) 50%);
 }
 
-/* Theme: Kaufmännisch & Vertrieb */
-body.theme-kaufmaennisch {
-    --bg-dark: #fffbeb;
-    --bg-card: rgba(255, 255, 255, 0.9);
-    --bg-card-hover: rgba(255, 255, 255, 1);
-    --primary: #b45309;
-    --primary-glow: rgba(180, 83, 9, 0.3);
-    --secondary: #d97706;
-    --secondary-glow: rgba(217, 119, 6, 0.2);
-    --text-primary: #78350f;
-    --text-secondary: #92400e;
-    --text-muted: #b45309;
-    --border-color: rgba(180, 83, 9, 0.15);
-    --border-color-hover: rgba(180, 83, 9, 0.4);
+/* Theme: Sales */
+body.theme-sales {
+    --bg-dark: #1e1005; /* Deep warm brown/orange */
+    --bg-card: rgba(40, 20, 10, 0.8);
+    --bg-card-hover: rgba(50, 25, 15, 1);
+    --primary: #f59e0b; /* Amber */
+    --primary-glow: rgba(245, 158, 11, 0.4);
+    --secondary: #d97706; /* Darker amber */
+    --secondary-glow: rgba(217, 119, 6, 0.3);
+    --text-primary: #fffbeb;
+    --text-secondary: #fcd34d;
+    --text-muted: #d6d3d1;
+    --border-color: rgba(245, 158, 11, 0.2);
+    --border-color-hover: rgba(217, 119, 6, 0.5);
 }
-body.theme-kaufmaennisch .glass-bg {
-    background: radial-gradient(circle at center, rgba(217, 119, 6, 0.05) 0%, rgba(255, 251, 235, 1) 50%);
+body.theme-sales .glass-bg {
+    background: radial-gradient(circle at center, rgba(245, 158, 11, 0.05) 0%, rgba(30, 16, 5, 1) 50%);
 }
 
 /* Theme: Handwerk & Produktion */

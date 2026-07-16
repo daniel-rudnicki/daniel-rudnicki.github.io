@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "Akribische Arbeitsweise, hohe Zuverlässigkeit und starkes Verantwortungsbewusstsein. Ich sorge für reibungslose Abläufe und die exakte Einhaltung von Richtlinien im öffentlichen Dienst." : 
             "Meticulous work ethic, high reliability, and a strong sense of responsibility. I ensure smooth operations and strict compliance with guidelines in public service.";
         img_keyword = gender === "m" ? "businessman,office" : "businesswoman,office";
-    } else if (cat.includes("Kaufmännisch")) {
-        theme = "theme-kaufmaennisch";
+    } else if (cat.includes("Sales")) {
+        theme = "theme-sales";
         subtitle = lang === "de" ? "Vertrieb & Kaufmännisches Management" : "Sales & Commercial Management";
         description = lang === "de" ? 
             "Zielorientiert, kommunikationsstark und kundenfokussiert. Mein Ziel ist es, durch strategisches Handeln und Verhandlungsgeschick messbare Erfolge für das Unternehmen zu erzielen." : 
