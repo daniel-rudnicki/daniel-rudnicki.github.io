@@ -37,47 +37,58 @@
         </div>
     </header>
 
-    <main>
-        <!-- Hero & Personalization Section -->
+    <main>        <!-- Hero & Personalization Section -->
         <section id="about" class="hero-section">
             <div class="section-container hero-container">
-                <div class="hero-content">
-                    <!-- Dynamic Greeting Badge -->
-                    {% if company %}
-                    <div class="greeting-badge" id="dynamic-badge" style="display: inline-flex;">
-                        <span class="badge-dot"></span>
-                        <span class="badge-text" id="dynamic-badge-text">{{ company }} Zugang</span>
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <!-- Dynamic Greeting Badge -->
+                        {% if company %}
+                        <div class="greeting-badge" id="dynamic-badge" style="display: inline-flex;">
+                            <span class="badge-dot"></span>
+                            <span class="badge-text" id="dynamic-badge-text">{{ company }} Zugang</span>
+                        </div>
+                        {% endif %}
+                        
+                        <h1 class="hero-title">
+                            Hallo, ich bin <span class="text-gradient">Daniel Rudnicki</span>
+                        </h1>
+                        <h2 class="hero-subtitle" id="dynamic-subtitle">{{ subtitle }}</h2>
+                        
+                        <!-- Dynamic Personalized Message -->
+                        {% if recruiter or company %}
+                        <div class="personalization-banner" id="personalization-box" style="display: block;">
+                            <div class="banner-content">
+                                <i class="fas fa-handshake"></i>
+                                <div class="banner-text">
+                                    <strong>Speziell für {{ company }}</strong>
+                                    {% if recruiter %}
+                                    <p>Sehr geehrte/r {{ recruiter }}, vielen Dank für Ihr Interesse an meinem Profil. Ich habe diese Mappe speziell auf die Anforderungen Ihrer Vakanz {% if job %}als <strong>{{ job }}</strong> {% endif %}abgestimmt.</p>
+                                    {% else %}
+                                    <p>Vielen Dank für Ihr Interesse an meinem Profil. Ich habe diese Mappe speziell auf Ihre Anforderungen abgestimmt.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        <p class="hero-description" id="dynamic-description">{{ description }}</p>
+                        
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">Projekte ansehen</a>
+                            <a href="#contact" class="btn btn-outline">Kontakt aufnehmen</a>
+                        </div>
                     </div>
-                    {% endif %}
                     
-                    <h1 class="hero-title">
-                        Hallo, ich bin <span class="text-gradient">Daniel Rudnicki</span>
-                    </h1>
-                    <h2 class="hero-subtitle" id="dynamic-subtitle">{{ subtitle }}</h2>
-                    
-                    <!-- Dynamic Personalized Message -->
-                    {% if recruiter or company %}
-                    <div class="personalization-banner" id="personalization-box" style="display: block;">
-                        <p class="banner-text" id="personalization-text">
-                            {% if recruiter and company %}
-                            Hallo {{ recruiter }}, willkommen {{ company }} Team! Schön, dass ihr hier seid.
-                            {% elif company %}
-                            Willkommen {{ company }} Team! Schön, dass ihr hier seid.
-                            {% elif recruiter %}
-                            Hallo {{ recruiter }}! Schön, dass du hier bist.
-                            {% endif %}
-                        </p>
-                    </div>
-                    {% endif %}
-
-                    <p class="hero-description" id="dynamic-description">
-                        {{ description }}
-                    </p>
-                    
-                    <div class="hero-actions">
-                        <a href="#contact" class="btn btn-secondary">Kontakt aufnehmen</a>
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-card">
+                            <img src="{{ hero_image }}" alt="Portrait" class="hero-avatar" />
+                            <div class="image-glow"></div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
                 <div class="hero-stats-card glass-card">
                     <div class="card-glow"></div>
