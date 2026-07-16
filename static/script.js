@@ -216,4 +216,15 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
         });
     }
+    
+    // Propagate URL parameters to internal links (Impressum, Datenschutz)
+    document.querySelectorAll('a').forEach(a => {
+        if (a.href.includes('impressum') || a.href.includes('datenschutz')) {
+            let url = new URL(a.href, window.location.href);
+            for (let [key, value] of params.entries()) {
+                url.searchParams.set(key, value);
+            }
+            a.href = url.href;
+        }
+    });
 });

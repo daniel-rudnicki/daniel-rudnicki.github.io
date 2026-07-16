@@ -45,5 +45,27 @@
             <p>&copy; 2026 Daniel Rudnicki. Alle Rechte vorbehalten. | <a href="/impressum.html">Impressum</a> | <a href="/datenschutz.html">Datenschutz</a></p>
         </div>
     </footer>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const cat = (params.get("cat") || "IT & Technologie").toLowerCase();
+        let theme = "theme-it";
+        if (cat.includes("soziales")) theme = "theme-soziales";
+        else if (cat.includes("administration")) theme = "theme-verwaltung";
+        else if (cat.includes("sales")) theme = "theme-sales";
+        else if (cat.includes("handwerk")) theme = "theme-handwerk";
+        else if (cat.includes("milit") || cat.includes("mil_it")) theme = "theme-mil_it";
+        document.body.className = theme;
+        
+        // Update links to keep the theme
+        document.querySelectorAll('a').forEach(a => {
+            if (a.href.includes('impressum') || a.href.includes('datenschutz') || (a.href.endsWith('/') && !a.href.includes('#'))) {
+                let url = new URL(a.href, window.location.href);
+                for (let [key, value] of params.entries()) {
+                    url.searchParams.set(key, value);
+                }
+                a.href = url.href;
+            }
+        });
+    </script>
 </body>
 </html>
