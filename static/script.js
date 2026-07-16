@@ -15,7 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const ref = escapeHTML(params.get("ref") || "");
     const cat = escapeHTML(params.get("cat") || "IT & Technologie");
     const job = escapeHTML(params.get("job") || "");
-    const gender = escapeHTML((params.get("gender") || "m").toLowerCase());
+    let gender = (params.get("gender") || "m").toLowerCase();
+    if (gender !== "m" && gender !== "f") {
+        gender = "m";
+    }
 
     // Language detection: Default to German unless English is requested
     const userLang = navigator.language || navigator.userLanguage || "";
