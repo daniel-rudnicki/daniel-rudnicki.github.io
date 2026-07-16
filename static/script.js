@@ -87,11 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.className = theme;
     
     // Apply Static Texts
-    document.getElementById("nav-about").innerText = t.nav_about;
-    document.getElementById("nav-skills").innerText = t.nav_skills;
-    document.getElementById("nav-exp").innerText = t.nav_exp;
-    document.getElementById("nav-contact").innerText = t.nav_contact;
-    document.getElementById("cta-req").innerText = t.cta_req;
+    if (document.getElementById("nav-about")) document.getElementById("nav-about").innerText = t.nav_about;
+    if (document.getElementById("nav-skills")) document.getElementById("nav-skills").innerText = t.nav_skills;
+    if (document.getElementById("nav-exp")) document.getElementById("nav-exp").innerText = t.nav_exp;
+    if (document.getElementById("nav-contact")) document.getElementById("nav-contact").innerText = t.nav_contact;
+    if (document.getElementById("cta-req")) document.getElementById("cta-req").innerText = t.cta_req;
     
     // Dynamic Logo Update
     const navLogo = document.getElementById("nav-logo");
@@ -102,19 +102,19 @@ document.addEventListener("DOMContentLoaded", () => {
             navLogo.innerHTML = `<span class="logo-accent"><i class="fa-solid fa-briefcase"></i></span> ${subtitle}`;
         }
     }
-    document.getElementById("hello-text").innerText = t.hello;
-    document.getElementById("proj-btn").innerText = t.proj_btn;
-    document.getElementById("cont-btn").innerText = t.cont_btn;
-    document.getElementById("stat-exp").innerText = t.stat_exp;
-    document.getElementById("stat-proj").innerText = t.stat_proj;
-    document.getElementById("stat-cli").innerText = t.stat_cli;
+    if (document.getElementById("hello-text")) document.getElementById("hello-text").innerText = t.hello;
+    if (document.getElementById("proj-btn")) document.getElementById("proj-btn").innerText = t.proj_btn;
+    if (document.getElementById("cont-btn")) document.getElementById("cont-btn").innerText = t.cont_btn;
+    if (document.getElementById("stat-exp")) document.getElementById("stat-exp").innerText = t.stat_exp;
+    if (document.getElementById("stat-proj")) document.getElementById("stat-proj").innerText = t.stat_proj;
+    if (document.getElementById("stat-cli")) document.getElementById("stat-cli").innerText = t.stat_cli;
     
     // Apply Dynamic Texts
-    document.getElementById("dynamic-subtitle").innerText = subtitle;
-    document.getElementById("dynamic-description").innerText = description;
+    if (document.getElementById("dynamic-subtitle")) document.getElementById("dynamic-subtitle").innerText = subtitle;
+    if (document.getElementById("dynamic-description")) document.getElementById("dynamic-description").innerText = description;
     
     // Set Avatar Image
-    document.getElementById("hero-avatar").src = avatarSrc;
+    if (document.getElementById("hero-avatar")) document.getElementById("hero-avatar").src = avatarSrc;
 
     // Greeting Badge
     if (c) {
