@@ -1001,3 +1001,31 @@ body.theme-handwerk .text-gradient {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* Theme: MIL_IT (Military / Security) */
+body.theme-mil_it {
+    --bg-dark: #1a1e16;
+    --bg-card: rgba(30, 36, 26, 0.85);
+    --bg-card-hover: rgba(38, 46, 33, 1);
+    --primary: #65a30d;
+    --primary-glow: rgba(101, 163, 13, 0.3);
+    --secondary: #4d7c0f;
+    --secondary-glow: rgba(77, 124, 15, 0.2);
+    --text-primary: #f0fdf4;
+    --text-secondary: #bef264;
+    --text-muted: #a3a3a3;
+    --border-color: rgba(101, 163, 13, 0.2);
+    --border-color-hover: rgba(101, 163, 13, 0.5);
+}
+body.theme-mil_it .glass-bg {
+    background: radial-gradient(circle at center, rgba(77, 124, 15, 0.1) 0%, rgba(26, 30, 22, 1) 50%);
+}
+body.theme-mil_it .glass-card {
+    background: rgba(30, 36, 26, 0.85);
+    border: 1px solid var(--border-color);
+}
+body.theme-mil_it .text-gradient {
+    background: linear-gradient(135deg, #a3e635 0%, #65a30d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
