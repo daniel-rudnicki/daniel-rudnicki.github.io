@@ -149,7 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Vielen Dank für Ihr Interesse an meinem Profil. Ich habe diese Mappe speziell auf Ihre Anforderungen abgestimmt." : 
                 "Thank you for your interest in my profile. I have tailored this portfolio specifically to your requirements.";
         }
-        }
     } else {
         if (pBox) pBox.style.display = "none";
     }
