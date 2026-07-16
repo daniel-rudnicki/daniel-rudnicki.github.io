@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Mit großem Einfühlungsvermögen und Engagement unterstütze ich Menschen in ihrem Alltag. Fokus auf individuelle Förderung, Kommunikation und eine vertrauensvolle Basis in der sozialen Arbeit." : 
             "With great empathy and dedication, I support people in their daily lives. Focusing on individual development, communication, and building a foundation of trust in social work.";
         avatarSrc = `/static/avatars/soziales_${gender}.jpg`;
-    } else if (cat.includes("Administration")) {
+    } else if (cat.includes("Administration") || cat.includes("Verwaltung")) {
         theme = "theme-verwaltung";
         subtitle = lang === "de" ? "Verwaltung, Kontrolle & Organisation" : "Administration, Control & Organization";
         description = lang === "de" ? 
