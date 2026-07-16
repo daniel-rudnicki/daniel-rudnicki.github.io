@@ -58,7 +58,7 @@
         const cat = (params.get("cat") || "IT & Technologie").toLowerCase();
         let theme = "theme-it";
         if (cat.includes("soziales")) theme = "theme-soziales";
-        else if (cat.includes("administration")) theme = "theme-verwaltung";
+        else if (cat.includes("administration") || cat.includes("verwaltung")) theme = "theme-verwaltung";
         else if (cat.includes("sales")) theme = "theme-sales";
         else if (cat.includes("handwerk")) theme = "theme-handwerk";
         else if (cat.includes("milit") || cat.includes("mil_it")) theme = "theme-mil_it";
