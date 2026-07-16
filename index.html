@@ -220,15 +220,15 @@
         <section id="contact" class="contact-section">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-tag">Verbindung</span>
-                    <h2 class="section-title">Bewerbungsunterlagen & Kontakt</h2>
-                    <p class="section-desc">Fordern Sie meine vollständigen Zeugnisse und Lebensläufe an oder treten Sie direkt in Kontakt.</p>
+                    <span class="section-tag" id="contact-tag">Verbindung</span>
+                    <h2 class="section-title" id="contact-title">Bewerbungsunterlagen & Kontakt</h2>
+                    <p class="section-desc" id="contact-desc">Fordern Sie meine vollständigen Zeugnisse und Lebensläufe an oder treten Sie direkt in Kontakt.</p>
                 </div>
 
                 <div class="contact-grid">
                     <div class="contact-info-panel glass-card">
-                        <h3>Kontaktinformationen</h3>
-                        <p>Daniel Rudnicki ist bereit für anspruchsvolle Aufgaben in der Systemintegration, Härtung und Netzwerkabsicherung.</p>
+                        <h3 id="contact-info-title">Kontaktinformationen</h3>
+                        <p id="contact-info-text">Daniel Rudnicki ist bereit für anspruchsvolle Aufgaben in der Systemintegration, Härtung und Netzwerkabsicherung.</p>
                         
                         <div class="info-list">
                             <div class="info-item">
@@ -243,10 +243,10 @@
 
                         <!-- Action buttons for document download request -->
                         <div class="document-download-box">
-                            <h4>Bewerbungs-Paket anfordern</h4>
-                            <p class="small-text">Vollständiger Lebenslauf, Zertifikate und Zeugnisse als PDF-Dokument.</p>
+                            <h4 id="req-docs-title">Bewerbungs-Paket anfordern</h4>
+                            <p class="small-text" id="req-docs-desc">Vollständiger Lebenslauf, Zertifikate und Zeugnisse als PDF-Dokument.</p>
                             <button id="request-docs-btn" class="btn btn-primary btn-block">
-                                <i class="fa-solid fa-file-shield"></i> Unterlagen anfordern
+                                <i class="fa-solid fa-file-shield"></i> <span id="req-docs-btn-text">Unterlagen anfordern</span>
                             </button>
                         </div>
                     </div>
@@ -255,24 +255,24 @@
                         <form id="contact-form" class="custom-form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="name">Ihr Name</label>
+                                    <label for="name" id="label-name">Ihr Name</label>
                                     <input type="text" id="name" required placeholder="z. B. Nicole Nellen">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">E-Mail-Adresse</label>
+                                    <label for="email" id="label-email">E-Mail-Adresse</label>
                                     <input type="email" id="email" required placeholder="ihre.adresse@firma.de">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="subject">Betreff</label>
+                                <label for="subject" id="label-subject">Betreff</label>
                                 <input type="text" id="subject" placeholder="z. B. Bewerbung als IT-Systemadministrator">
                             </div>
                             <div class="form-group">
-                                <label for="message">Nachricht</label>
+                                <label for="message" id="label-message">Nachricht</label>
                                 <textarea id="message" rows="5" required placeholder="Sehr geehrter Herr Rudnicki..."></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fa-solid fa-paper-plane"></i> Nachricht senden
+                            <button type="submit" class="btn btn-primary" id="submit-btn">
+                                <i class="fa-solid fa-paper-plane"></i> <span id="submit-btn-text">Nachricht senden</span>
                             </button>
                         </form>
                     </div>
@@ -284,7 +284,7 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="section-container">
-            <p>&copy; 2026 Daniel Rudnicki. Alle Rechte vorbehalten. | <a href="/impressum.html">Impressum</a> | <a href="/datenschutz.html">Datenschutz</a></p>
+            <p id="footer-text">&copy; 2026 Daniel Rudnicki. Alle Rechte vorbehalten. | <a href="/impressum.html">Impressum</a> | <a href="/datenschutz.html">Datenschutz</a></p>
         </div>
     </footer>
     <script src="/static/content.js"></script>

@@ -38,7 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
         stat_exp: lang === "de" ? "Jahre Erfahrung" : "Years Experience",
         stat_proj: lang === "de" ? "Erfolgreiche Projekte" : "Successful Projects",
         stat_cli: lang === "de" ? "Zufriedene Klienten" : "Happy Clients",
-        zugang: lang === "de" ? "Zugang" : "Access"
+        zugang: lang === "de" ? "Zugang" : "Access",
+        contact_tag: lang === "de" ? "Verbindung" : "Connect",
+        contact_title: lang === "de" ? "Bewerbungsunterlagen & Kontakt" : "Application Documents & Contact",
+        contact_desc: lang === "de" ? "Fordern Sie meine vollständigen Zeugnisse und Lebensläufe an oder treten Sie direkt in Kontakt." : "Request my complete certificates and resume or contact me directly.",
+        contact_info_title: lang === "de" ? "Kontaktinformationen" : "Contact Information",
+        req_docs_title: lang === "de" ? "Bewerbungs-Paket anfordern" : "Request Application Package",
+        req_docs_desc: lang === "de" ? "Vollständiger Lebenslauf, Zertifikate und Zeugnisse als PDF-Dokument." : "Complete resume, certificates, and references as a PDF document.",
+        req_docs_btn: lang === "de" ? "Unterlagen anfordern" : "Request Documents",
+        label_name: lang === "de" ? "Ihr Name" : "Your Name",
+        label_email: lang === "de" ? "E-Mail-Adresse" : "Email Address",
+        label_subject: lang === "de" ? "Betreff" : "Subject",
+        label_message: lang === "de" ? "Nachricht" : "Message",
+        submit_btn_text: lang === "de" ? "Nachricht senden" : "Send Message",
+        placeholder_name: lang === "de" ? "z. B. Nicole Nellen" : "e.g. Jane Doe",
+        placeholder_email: lang === "de" ? "ihre.adresse@firma.de" : "your.address@company.com",
+        placeholder_subject: lang === "de" ? "z. B. Bewerbung als IT-Systemadministrator" : "e.g. Application as System Administrator",
+        placeholder_message: lang === "de" ? "Sehr geehrter Herr Rudnicki..." : "Dear Mr. Rudnicki..."
     };
 
     // Category Logic
@@ -48,6 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "Spezialist für Systemhärtung, Linux/Unix-Administration und Netzwerk-Integrität. Praxis in der Konzeptionierung quelloffener Infrastrukturen und datenschutzkonformer Architekturen." : 
         "Specialist in system hardening, Linux/Unix administration, and network integrity. Experienced in designing open-source infrastructures and privacy-compliant architectures.";
     let avatarSrc = `/static/avatars/it_${gender}.jpg`;
+    let contactInfoText = lang === "de" ? 
+        "Daniel Rudnicki ist bereit für anspruchsvolle Aufgaben in der Systemintegration, Härtung und Netzwerkabsicherung." : 
+        "Daniel Rudnicki is ready for challenging tasks in system integration, hardening, and network security.";
 
     if (cat.includes("Soziales")) {
         theme = "theme-soziales";
@@ -56,6 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Mit großem Einfühlungsvermögen und Engagement unterstütze ich Menschen in ihrem Alltag. Fokus auf individuelle Förderung, Kommunikation und eine vertrauensvolle Basis in der sozialen Arbeit." : 
             "With great empathy and dedication, I support people in their daily lives. Focusing on individual development, communication, and building a foundation of trust in social work.";
         avatarSrc = `/static/avatars/soziales_${gender}.jpg`;
+        contactInfoText = lang === "de" ? 
+            "Daniel Rudnicki ist bereit für anspruchsvolle Aufgaben in der Betreuung, Pflege und sozialen Arbeit." : 
+            "Daniel Rudnicki is ready for challenging tasks in care, support, and social work.";
     } else if (cat.includes("Administration") || cat.includes("Verwaltung")) {
         theme = "theme-verwaltung";
         subtitle = lang === "de" ? "Verwaltung, Kontrolle & Organisation" : "Administration, Control & Organization";
@@ -63,6 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Akribische Arbeitsweise, hohe Zuverlässigkeit und starkes Verantwortungsbewusstsein. Ich sorge für reibungslose Abläufe und die exakte Einhaltung von Richtlinien im öffentlichen Dienst." : 
             "Meticulous work ethic, high reliability, and a strong sense of responsibility. I ensure smooth operations and strict compliance with guidelines in public service.";
         avatarSrc = `/static/avatars/verwaltung_${gender}.jpg`;
+        contactInfoText = lang === "de" ? 
+            "Daniel Rudnicki ist bereit für anspruchsvolle Aufgaben in der Sachbearbeitung, Verwaltung und Compliance." : 
+            "Daniel Rudnicki is ready for challenging tasks in administration, organization, and compliance.";
     } else if (cat.includes("Sales")) {
         theme = "theme-sales";
         subtitle = lang === "de" ? "Vertrieb & Kaufmännisches Management" : "Sales & Commercial Management";
@@ -70,6 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Zielorientiert, kommunikationsstark und kundenfokussiert. Mein Ziel ist es, durch strategisches Handeln und Verhandlungsgeschick messbare Erfolge für das Unternehmen zu erzielen." : 
             "Goal-oriented, strong communicator, and customer-focused. My objective is to achieve measurable success for the company through strategic action and negotiation skills.";
         avatarSrc = `/static/avatars/sales_${gender}.jpg`;
+        contactInfoText = lang === "de" ? 
+            "Daniel Rudnicki ist bereit für anspruchsvolle Aufgaben im Vertrieb, Key Account Management und kaufmännischen Bereich." : 
+            "Daniel Rudnicki is ready for challenging tasks in sales, account management, and commercial operations.";
     } else if (cat.includes("Handwerk")) {
         theme = "theme-handwerk";
         subtitle = lang === "de" ? "Handwerkliche & Technische Fachkraft" : "Craft & Technical Specialist";
@@ -77,6 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Praxisorientierte Problemlösungen, handwerkliches Geschick und absolute Verlässlichkeit. Ich packe an, wo es nötig ist, und lege großen Wert auf saubere und dauerhafte Ergebnisse." : 
             "Practical problem-solving, craftsmanship, and absolute reliability. I get hands-on where needed and place great value on clean and durable results.";
         avatarSrc = `/static/avatars/handwerk_${gender}.jpg`;
+        contactInfoText = lang === "de" ? 
+            "Daniel Rudnicki ist bereit für anspruchsvolle Aufgaben in der technischen Instandhaltung, Wartung und Reparatur." : 
+            "Daniel Rudnicki is ready for challenging tasks in technical maintenance, assembly, and repair.";
     } else if (cat.includes("milit") || cat.includes("MIL_IT")) {
         theme = "theme-mil_it";
         subtitle = lang === "de" ? "Militärische IT & KRITIS-Absicherung" : "Military IT & Critical Infrastructure";
@@ -84,6 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Absolute Verschwiegenheit, höchste Sicherheitsstandards und tiefgehende Erfahrung im Aufbau gehärteter Systeme. Zuverlässiger Schutz verteidigungsrelevanter Infrastrukturen." : 
             "Absolute confidentiality, highest security standards, and deep experience in building hardened systems. Reliable protection of defense-critical infrastructures.";
         avatarSrc = `/static/avatars/mil_it_${gender}.jpg`;
+        contactInfoText = lang === "de" ? 
+            "Daniel Rudnicki ist bereit für anspruchsvolle Aufgaben in der KRITIS-Absicherung und militärischen IT." : 
+            "Daniel Rudnicki is ready for challenging tasks in critical infrastructure protection and military IT.";
     }
 
     // Apply Theme
@@ -200,6 +234,37 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Apply Contact and Footer Translations
+    if (document.getElementById("contact-tag")) document.getElementById("contact-tag").innerText = t.contact_tag;
+    if (document.getElementById("contact-title")) document.getElementById("contact-title").innerText = t.contact_title;
+    if (document.getElementById("contact-desc")) document.getElementById("contact-desc").innerText = t.contact_desc;
+    if (document.getElementById("contact-info-title")) document.getElementById("contact-info-title").innerText = t.contact_info_title;
+    if (document.getElementById("contact-info-text")) document.getElementById("contact-info-text").innerText = contactInfoText;
+    if (document.getElementById("req-docs-title")) document.getElementById("req-docs-title").innerText = t.req_docs_title;
+    if (document.getElementById("req-docs-desc")) document.getElementById("req-docs-desc").innerText = t.req_docs_desc;
+    if (document.getElementById("req-docs-btn-text")) document.getElementById("req-docs-btn-text").innerText = t.req_docs_btn;
+
+    // Form inputs and placeholders
+    if (document.getElementById("label-name")) document.getElementById("label-name").innerText = t.label_name;
+    if (document.getElementById("name")) document.getElementById("name").placeholder = t.placeholder_name;
+    if (document.getElementById("label-email")) document.getElementById("label-email").innerText = t.label_email;
+    if (document.getElementById("email")) document.getElementById("email").placeholder = t.placeholder_email;
+    if (document.getElementById("label-subject")) document.getElementById("label-subject").innerText = t.label_subject;
+    if (document.getElementById("subject")) document.getElementById("subject").placeholder = t.placeholder_subject;
+    if (document.getElementById("label-message")) document.getElementById("label-message").innerText = t.label_message;
+    if (document.getElementById("message")) document.getElementById("message").placeholder = t.placeholder_message;
+    if (document.getElementById("submit-btn-text")) document.getElementById("submit-btn-text").innerText = t.submit_btn_text;
+
+    // Footer Rights
+    const footerText = document.getElementById("footer-text");
+    if (footerText) {
+        const impressumLink = `<a href="/impressum.html">Impressum</a>`;
+        const datenschutzLink = `<a href="/datenschutz.html">Datenschutz</a>`;
+        footerText.innerHTML = lang === "de" ?
+            `&copy; 2026 Daniel Rudnicki. Alle Rechte vorbehalten. | ${impressumLink} | ${datenschutzLink}` :
+            `&copy; 2026 Daniel Rudnicki. All rights reserved. | ${impressumLink} | ${datenschutzLink}`;
+    }
+
     // Secure Email / Mailto functionality
     const user = "daniel.rudnicki";
     const domain = "gmx.de";
@@ -214,9 +279,31 @@ document.addEventListener("DOMContentLoaded", () => {
     if (requestDocsBtn) {
         requestDocsBtn.addEventListener("click", (e) => {
             e.preventDefault();
-            const subject = encodeURIComponent("Bewerbungsunterlagen anfordern");
-            const body = encodeURIComponent("Sehr geehrter Herr Rudnicki,\n\nbitte senden Sie mir Ihre vollständigen Bewerbungsunterlagen (Lebenslauf und Zeugnisse) als PDF zu.\n\nMit freundlichen Grüßen\n");
+            const subject = encodeURIComponent(lang === "de" ? "Bewerbungsunterlagen anfordern" : "Request Application Documents");
+            const body = encodeURIComponent(lang === "de" ? 
+                "Sehr geehrter Herr Rudnicki,\n\nbitte senden Sie mir Ihre vollständigen Bewerbungsunterlagen (Lebenslauf und Zeugnisse) als PDF zu.\n\nMit freundlichen Grüßen\n" :
+                "Dear Mr. Rudnicki,\n\nplease send me your complete application documents (resume and references) as PDF.\n\nBest regards,\n");
             window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
+        });
+    }
+
+    // Serverless Functional Contact Form via client-side Mailto fallback
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const senderName = document.getElementById("name").value;
+            const senderEmail = document.getElementById("email").value;
+            const subjectVal = document.getElementById("subject").value || (lang === "de" ? "Kontaktanfrage Portfolio" : "Contact Request Portfolio");
+            const msgVal = document.getElementById("message").value;
+            
+            const mailSubject = encodeURIComponent(subjectVal);
+            const mailBody = encodeURIComponent(lang === "de" ?
+                `Hallo Herr Rudnicki,\n\nSie haben eine Nachricht über Ihr Online-Portfolio erhalten.\n\nName: ${senderName}\nE-Mail: ${senderEmail}\n\nNachricht:\n${msgVal}\n` :
+                `Hello Mr. Rudnicki,\n\nyou received a message via your online portfolio.\n\nName: ${senderName}\nEmail: ${senderEmail}\n\nMessage:\n${msgVal}\n`
+            );
+            
+            window.location.href = `mailto:${mail}?subject=${mailSubject}&body=${mailBody}`;
         });
     }
     
