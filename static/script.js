@@ -92,6 +92,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("nav-exp").innerText = t.nav_exp;
     document.getElementById("nav-contact").innerText = t.nav_contact;
     document.getElementById("cta-req").innerText = t.cta_req;
+    
+    // Dynamic Logo Update
+    const navLogo = document.getElementById("nav-logo");
+    if (navLogo) {
+        if (c && c.trim() !== "") {
+            navLogo.innerHTML = `<span class="logo-accent"><i class="fa-solid fa-building"></i></span> ${c}`;
+        } else {
+            navLogo.innerHTML = `<span class="logo-accent"><i class="fa-solid fa-briefcase"></i></span> ${subtitle}`;
+        }
+    }
     document.getElementById("hello-text").innerText = t.hello;
     document.getElementById("proj-btn").innerText = t.proj_btn;
     document.getElementById("cont-btn").innerText = t.cont_btn;
