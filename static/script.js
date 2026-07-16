@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const job = escapeHTML(params.get("job") || "");
     const gender = escapeHTML((params.get("gender") || "m").toLowerCase());
 
-    // Language detection
+    // Language detection: Default to German unless English is requested
     const userLang = navigator.language || navigator.userLanguage || "";
-    const lang = userLang.toLowerCase().startsWith("de") ? "de" : "en";
+    const lang = userLang.toLowerCase().startsWith("en") ? "en" : "de";
 
     // Texts
     const t = {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let description = lang === "de" ? 
         "Spezialist für Systemhärtung, Linux/Unix-Administration und Netzwerk-Integrität. Praxis in der Konzeptionierung quelloffener Infrastrukturen und datenschutzkonformer Architekturen." : 
         "Specialist in system hardening, Linux/Unix administration, and network integrity. Experienced in designing open-source infrastructures and privacy-compliant architectures.";
-    let img_keyword = gender === "m" ? "male,sysadmin" : "female,sysadmin";
+    let avatarSrc = `/static/avatars/it_${gender}.jpg`;
 
     if (cat.includes("Soziales")) {
         theme = "theme-soziales";
@@ -52,28 +52,28 @@ document.addEventListener("DOMContentLoaded", () => {
         description = lang === "de" ? 
             "Mit großem Einfühlungsvermögen und Engagement unterstütze ich Menschen in ihrem Alltag. Fokus auf individuelle Förderung, Kommunikation und eine vertrauensvolle Basis in der sozialen Arbeit." : 
             "With great empathy and dedication, I support people in their daily lives. Focusing on individual development, communication, and building a foundation of trust in social work.";
-        img_keyword = gender === "m" ? "male,nurse" : "female,nurse";
+        avatarSrc = `/static/avatars/soziales_${gender}.jpg`;
     } else if (cat.includes("Verwaltung")) {
         theme = "theme-verwaltung";
         subtitle = lang === "de" ? "Verwaltung, Kontrolle & Organisation" : "Administration, Control & Organization";
         description = lang === "de" ? 
             "Akribische Arbeitsweise, hohe Zuverlässigkeit und starkes Verantwortungsbewusstsein. Ich sorge für reibungslose Abläufe und die exakte Einhaltung von Richtlinien im öffentlichen Dienst." : 
             "Meticulous work ethic, high reliability, and a strong sense of responsibility. I ensure smooth operations and strict compliance with guidelines in public service.";
-        img_keyword = gender === "m" ? "businessman,office" : "businesswoman,office";
+        avatarSrc = `/static/avatars/verwaltung_${gender}.jpg`;
     } else if (cat.includes("Sales")) {
         theme = "theme-sales";
         subtitle = lang === "de" ? "Vertrieb & Kaufmännisches Management" : "Sales & Commercial Management";
         description = lang === "de" ? 
             "Zielorientiert, kommunikationsstark und kundenfokussiert. Mein Ziel ist es, durch strategisches Handeln und Verhandlungsgeschick messbare Erfolge für das Unternehmen zu erzielen." : 
             "Goal-oriented, strong communicator, and customer-focused. My objective is to achieve measurable success for the company through strategic action and negotiation skills.";
-        img_keyword = gender === "m" ? "male,manager" : "female,manager";
+        avatarSrc = `/static/avatars/sales_${gender}.jpg`;
     } else if (cat.includes("Handwerk")) {
         theme = "theme-handwerk";
         subtitle = lang === "de" ? "Handwerkliche & Technische Fachkraft" : "Craft & Technical Specialist";
         description = lang === "de" ? 
             "Praxisorientierte Problemlösungen, handwerkliches Geschick und absolute Verlässlichkeit. Ich packe an, wo es nötig ist, und lege großen Wert auf saubere und dauerhafte Ergebnisse." : 
             "Practical problem-solving, craftsmanship, and absolute reliability. I get hands-on where needed and place great value on clean and durable results.";
-        img_keyword = gender === "m" ? "male,mechanic" : "female,mechanic";
+        avatarSrc = `https://loremflickr.com/400/500/${gender === 'm' ? 'male,mechanic' : 'female,mechanic'}?random=1`;
     }
 
     // Apply Theme
@@ -97,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("dynamic-description").innerText = description;
     
     // Set Avatar Image
-    const avatarSrc = `https://loremflickr.com/400/500/${img_keyword}?random=1`;
     document.getElementById("hero-avatar").src = avatarSrc;
 
     // Greeting Badge
