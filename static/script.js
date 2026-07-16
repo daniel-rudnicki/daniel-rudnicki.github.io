@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description = lang === "de" ? 
             "Praxisorientierte Problemlösungen, handwerkliches Geschick und absolute Verlässlichkeit. Ich packe an, wo es nötig ist, und lege großen Wert auf saubere und dauerhafte Ergebnisse." : 
             "Practical problem-solving, craftsmanship, and absolute reliability. I get hands-on where needed and place great value on clean and durable results.";
-        avatarSrc = `https://loremflickr.com/400/500/${gender === 'm' ? 'male,mechanic' : 'female,mechanic'}?random=1`;
+        avatarSrc = `/static/avatars/handwerk_${gender}.jpg`;
     }
 
     // Apply Theme
