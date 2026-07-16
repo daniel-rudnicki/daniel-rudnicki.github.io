@@ -128,5 +128,31 @@ const contentData = {
             exp2Title: "Production Control & Quality Assurance", exp2Comp: "SVB Personalleasing", exp2Desc: "Ensuring process stability on state-of-the-art automotive production lines and immediate troubleshooting.",
             exp3Title: "Industrial Robots & Automation", exp3Comp: "Atlantec Braunschweig", exp3Desc: "Setup, adjustment, and hardware-level programming of industrial robots for manufacturing."
         }
+    },
+    "theme-mil_it": {
+        "de": {
+            skillsTitle: "Sicherheit & Verteidigung",
+            skillsDesc: "Ein Überblick über meine Kernkompetenzen im Bereich KRITIS und militärische Infrastruktur.",
+            skill1Icon: '<i class="fa-solid fa-shield-halved"></i>', skill1Title: "Systemhärtung & Security", skill1Desc: "Aufbau gehärteter Linux/Unix-Systeme. Physische und logische Isolation kritischer Netzwerke (Air-Gapping).", skill1Tags: '<span class="tag">Air-Gap</span><span class="tag">Härtung</span><span class="tag">Zero Trust</span>',
+            skill2Icon: '<i class="fa-solid fa-lock"></i>', skill2Title: "Kryptographie & VPN", skill2Desc: "Implementierung hochsicherer IPsec-Tunnel und OpenBSD Edge-Gateways zur verschlüsselten Kommunikation.", skill2Tags: '<span class="tag">IPsec</span><span class="tag">Kryptographie</span><span class="tag">OpenBSD</span>',
+            skill3Icon: '<i class="fa-solid fa-server"></i>', skill3Title: "KRITIS & Virtualisierung", skill3Desc: "Betrieb geschützter Proxmox VE Cluster. Isolierung von Diensten zur Abwehr komplexer Cyber-Angriffe.", skill3Tags: '<span class="tag">KRITIS</span><span class="tag">Proxmox</span><span class="tag">Isolation</span>',
+            skill4Icon: '<i class="fa-solid fa-user-secret"></i>', skill4Title: "Integrität & Compliance", skill4Desc: "Strikte Einhaltung von Geheimhaltungsvorgaben (VS-NfD) und absoluter Schutz sensibler Daten.", skill4Tags: '<span class="tag">VS-NfD</span><span class="tag">Integrität</span><span class="tag">Compliance</span>',
+            expTitle: "Beruflicher Werdegang", expDesc: "Konsequente Praxiserfahrung in sicherheitskritischen und hochverfügbaren Umgebungen.",
+            exp1Title: "IT-Sicherheitsarchitektur", exp1Comp: "Private Großprojekte", exp1Desc: "Konzeption und Aufbau abhörsicherer, redundanter Kommunikationsinfrastrukturen und Firewalls.",
+            exp2Title: "Qualitätssicherung", exp2Comp: "SVB Personalleasing", exp2Desc: "Disziplinierte Einhaltung und Überwachung strengster Qualitäts- und Sicherheitsvorgaben.",
+            exp3Title: "Steuerung & Präzision", exp3Comp: "Atlantec Braunschweig", exp3Desc: "Hardwarenahe Entwicklung sicherheitsrelevanter Steuerungscodes ohne Fehlertoleranz."
+        },
+        "en": {
+            skillsTitle: "Security & Defense",
+            skillsDesc: "An overview of my core competencies in critical infrastructure and military environments.",
+            skill1Icon: '<i class="fa-solid fa-shield-halved"></i>', skill1Title: "System Hardening", skill1Desc: "Building hardened Linux/Unix systems. Physical and logical isolation of critical networks (Air-Gapping).", skill1Tags: '<span class="tag">Air-Gap</span><span class="tag">Hardening</span><span class="tag">Zero Trust</span>',
+            skill2Icon: '<i class="fa-solid fa-lock"></i>', skill2Title: "Cryptography & VPN", skill2Desc: "Implementation of highly secure IPsec tunnels and OpenBSD edge gateways for encrypted communication.", skill2Tags: '<span class="tag">IPsec</span><span class="tag">Cryptography</span><span class="tag">OpenBSD</span>',
+            skill3Icon: '<i class="fa-solid fa-server"></i>', skill3Title: "Critical Infrastructure", skill3Desc: "Operation of protected Proxmox VE clusters. Isolation of services to defend against complex cyber attacks.", skill3Tags: '<span class="tag">KRITIS</span><span class="tag">Proxmox</span><span class="tag">Isolation</span>',
+            skill4Icon: '<i class="fa-solid fa-user-secret"></i>', skill4Title: "Integrity & Compliance", skill4Desc: "Strict adherence to confidentiality requirements and absolute protection of sensitive data.", skill4Tags: '<span class="tag">Confidentiality</span><span class="tag">Integrity</span><span class="tag">Compliance</span>',
+            expTitle: "Professional Experience", expDesc: "Consistent practical experience in highly secure and high-availability environments.",
+            exp1Title: "IT Security Architecture", exp1Comp: "Private Projects", exp1Desc: "Design and deployment of tap-proof, redundant communication infrastructures and firewalls.",
+            exp2Title: "Quality Assurance", exp2Comp: "SVB Personalleasing", exp2Desc: "Disciplined monitoring and enforcement of strict quality and security regulations.",
+            exp3Title: "Control & Precision", exp3Comp: "Atlantec Braunschweig", exp3Desc: "Hardware-level development of security-critical control codes with zero error tolerance."
+        }
     }
 };

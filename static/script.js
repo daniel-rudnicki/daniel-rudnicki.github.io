@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Mit großem Einfühlungsvermögen und Engagement unterstütze ich Menschen in ihrem Alltag. Fokus auf individuelle Förderung, Kommunikation und eine vertrauensvolle Basis in der sozialen Arbeit." : 
             "With great empathy and dedication, I support people in their daily lives. Focusing on individual development, communication, and building a foundation of trust in social work.";
         avatarSrc = `/static/avatars/soziales_${gender}.jpg`;
-    } else if (cat.includes("Verwaltung")) {
+    } else if (cat.includes("Administration")) {
         theme = "theme-verwaltung";
         subtitle = lang === "de" ? "Verwaltung, Kontrolle & Organisation" : "Administration, Control & Organization";
         description = lang === "de" ? 
@@ -74,6 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
             "Praxisorientierte Problemlösungen, handwerkliches Geschick und absolute Verlässlichkeit. Ich packe an, wo es nötig ist, und lege großen Wert auf saubere und dauerhafte Ergebnisse." : 
             "Practical problem-solving, craftsmanship, and absolute reliability. I get hands-on where needed and place great value on clean and durable results.";
         avatarSrc = `/static/avatars/handwerk_${gender}.jpg`;
+    } else if (cat.includes("milit") || cat.includes("MIL_IT")) {
+        theme = "theme-mil_it";
+        subtitle = lang === "de" ? "Militärische IT & KRITIS-Absicherung" : "Military IT & Critical Infrastructure";
+        description = lang === "de" ? 
+            "Absolute Verschwiegenheit, höchste Sicherheitsstandards und tiefgehende Erfahrung im Aufbau gehärteter Systeme. Zuverlässiger Schutz verteidigungsrelevanter Infrastrukturen." : 
+            "Absolute confidentiality, highest security standards, and deep experience in building hardened systems. Reliable protection of defense-critical infrastructures.";
+        avatarSrc = `/static/avatars/mil_it_${gender}.jpg`;
     }
 
     // Apply Theme
