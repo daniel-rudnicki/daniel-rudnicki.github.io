@@ -1,10 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Utility to prevent DOM XSS
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, tag => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
+        }[tag] || tag));
+    }
+
     const params = new URLSearchParams(window.location.search);
-    const c = params.get("c") || "";
-    const ref = params.get("ref") || "";
-    const cat = params.get("cat") || "IT & Technologie";
-    const job = params.get("job") || "";
-    const gender = (params.get("gender") || "m").toLowerCase();
+    const c = escapeHTML(params.get("c") || "");
+    const ref = escapeHTML(params.get("ref") || "");
+    const cat = escapeHTML(params.get("cat") || "IT & Technologie");
+    const job = escapeHTML(params.get("job") || "");
+    const gender = escapeHTML((params.get("gender") || "m").toLowerCase());
 
     // Language detection
     const userLang = navigator.language || navigator.userLanguage || "";
@@ -124,5 +135,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     } else {
         pBox.style.display = "none";
+    }
+
+    // Secure Email / Mailto functionality
+    const user = "daniel.rudnicki";
+    const domain = "gmx.de";
+    const mail = user + "@" + domain;
+    
+    const emailContainer = document.getElementById("secure-email-container");
+    if (emailContainer) {
+        emailContainer.innerHTML = `<a href="mailto:${mail}" class="nav-link" style="padding: 0;">${mail}</a>`;
+    }
+
+    const requestDocsBtn = document.getElementById("request-docs-btn");
+    if (requestDocsBtn) {
+        requestDocsBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const subject = encodeURIComponent("Bewerbungsunterlagen anfordern");
+            const body = encodeURIComponent("Sehr geehrter Herr Rudnicki,\n\nbitte senden Sie mir Ihre vollständigen Bewerbungsunterlagen (Lebenslauf und Zeugnisse) als PDF zu.\n\nMit freundlichen Grüßen\n");
+            window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
+        });
     }
 });
