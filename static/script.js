@@ -136,6 +136,50 @@ document.addEventListener("DOMContentLoaded", () => {
         pBox.style.display = "none";
     }
 
+    // Dynamic Section Content (Skills & Experience)
+    if (typeof contentData !== "undefined") {
+        const cData = contentData[theme] && contentData[theme][lang] ? contentData[theme][lang] : contentData["theme-it"]["de"];
+        if (cData) {
+            document.getElementById("skills-main-title").innerText = cData.skillsTitle;
+            document.getElementById("skills-main-desc").innerText = cData.skillsDesc;
+            
+            document.getElementById("skill-1-icon").innerHTML = cData.skill1Icon;
+            document.getElementById("skill-1-title").innerText = cData.skill1Title;
+            document.getElementById("skill-1-desc").innerText = cData.skill1Desc;
+            document.getElementById("skill-1-tags").innerHTML = cData.skill1Tags;
+            
+            document.getElementById("skill-2-icon").innerHTML = cData.skill2Icon;
+            document.getElementById("skill-2-title").innerText = cData.skill2Title;
+            document.getElementById("skill-2-desc").innerText = cData.skill2Desc;
+            document.getElementById("skill-2-tags").innerHTML = cData.skill2Tags;
+            
+            document.getElementById("skill-3-icon").innerHTML = cData.skill3Icon;
+            document.getElementById("skill-3-title").innerText = cData.skill3Title;
+            document.getElementById("skill-3-desc").innerText = cData.skill3Desc;
+            document.getElementById("skill-3-tags").innerHTML = cData.skill3Tags;
+            
+            document.getElementById("skill-4-icon").innerHTML = cData.skill4Icon;
+            document.getElementById("skill-4-title").innerText = cData.skill4Title;
+            document.getElementById("skill-4-desc").innerText = cData.skill4Desc;
+            document.getElementById("skill-4-tags").innerHTML = cData.skill4Tags;
+            
+            document.getElementById("exp-main-title").innerText = cData.expTitle;
+            document.getElementById("exp-main-desc").innerText = cData.expDesc;
+            
+            document.getElementById("exp-1-title").innerText = cData.exp1Title;
+            document.getElementById("exp-1-comp").innerText = cData.exp1Comp;
+            document.getElementById("exp-1-desc").innerText = cData.exp1Desc;
+            
+            document.getElementById("exp-2-title").innerText = cData.exp2Title;
+            document.getElementById("exp-2-comp").innerText = cData.exp2Comp;
+            document.getElementById("exp-2-desc").innerText = cData.exp2Desc;
+            
+            document.getElementById("exp-3-title").innerText = cData.exp3Title;
+            document.getElementById("exp-3-comp").innerText = cData.exp3Comp;
+            document.getElementById("exp-3-desc").innerText = cData.exp3Desc;
+        }
+    }
+
     // Secure Email / Mailto functionality
     const user = "daniel.rudnicki";
     const domain = "gmx.de";

@@ -104,17 +104,17 @@
         <section id="skills" class="skills-section">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-tag">Fähigkeiten</span>
-                    <h2 class="section-title">Technische Expertise</h2>
-                    <p class="section-desc">Ein Überblick über meine Kernkompetenzen in der Administration, Absicherung und Prozessstabilität.</p>
+                    <span class="section-tag" id="skills-tag">Fähigkeiten</span>
+                    <h2 class="section-title" id="skills-main-title">Technische Expertise</h2>
+                    <p class="section-desc" id="skills-main-desc">Ein Überblick über meine Kernkompetenzen in der Administration, Absicherung und Prozessstabilität.</p>
                 </div>
 
                 <div class="skills-grid">
-                    <div class="skill-category-card glass-card" data-tech-category="linux">
-                        <div class="category-icon"><i class="fa-brands fa-linux"></i></div>
-                        <h3>Linux & Serverlandschaften</h3>
-                        <p>Distributionen-übergreifende Administration (Debian, RHEL, Ubuntu), OpenBSD und Solaris. CIS-konforme Systemhärtung (Level 2) und dateibasierte Berechtigungskonzepte.</p>
-                        <div class="skill-tags">
+                    <div class="skill-category-card glass-card">
+                        <div class="category-icon" id="skill-1-icon"><i class="fa-brands fa-linux"></i></div>
+                        <h3 id="skill-1-title">Linux & Serverlandschaften</h3>
+                        <p id="skill-1-desc">Distributionen-übergreifende Administration (Debian, RHEL, Ubuntu), OpenBSD und Solaris. CIS-konforme Systemhärtung (Level 2) und dateibasierte Berechtigungskonzepte.</p>
+                        <div class="skill-tags" id="skill-1-tags">
                             <span class="tag">Linux Servers</span>
                             <span class="tag">OpenBSD</span>
                             <span class="tag">Solaris</span>
@@ -123,11 +123,11 @@
                         </div>
                     </div>
 
-                    <div class="skill-category-card glass-card" data-tech-category="network">
-                        <div class="category-icon"><i class="fa-solid fa-network-wired"></i></div>
-                        <h3>Sicherheit & Netzwerke</h3>
-                        <p>Konzeption restriktiver Edge-Firewalls und VPN-Gateways mit OpenBSD (PF/CARP/IPsec), OPNsense, pfSense und VyOS. VLAN-Segmentierung, VPN/IPsec Tunnel, Packet Inspections via Wireshark und tcpdump.</p>
-                        <div class="skill-tags">
+                    <div class="skill-category-card glass-card">
+                        <div class="category-icon" id="skill-2-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3 id="skill-2-title">Sicherheit & Netzwerke</h3>
+                        <p id="skill-2-desc">Konzeption restriktiver Edge-Firewalls und VPN-Gateways mit OpenBSD (PF/CARP/IPsec), OPNsense, pfSense und VyOS. VLAN-Segmentierung, VPN/IPsec Tunnel, Packet Inspections via Wireshark und tcpdump.</p>
+                        <div class="skill-tags" id="skill-2-tags">
                             <span class="tag">OpenBSD (PF)</span>
                             <span class="tag">Edge-Firewalling</span>
                             <span class="tag">VPN-Gateways</span>
@@ -137,11 +137,11 @@
                         </div>
                     </div>
 
-                    <div class="skill-category-card glass-card" data-tech-category="privacy">
-                        <div class="category-icon"><i class="fa-solid fa-user-shield"></i></div>
-                        <h3>Privacy & Virtualisierung</h3>
-                        <p>Aufbau privater Virtualisierungsumgebungen mit Proxmox VE und Docker. Härtung von GrapheneOS, Integration von Tails OS und TOR-Routing.</p>
-                        <div class="skill-tags">
+                    <div class="skill-category-card glass-card">
+                        <div class="category-icon" id="skill-3-icon"><i class="fa-solid fa-user-shield"></i></div>
+                        <h3 id="skill-3-title">Privacy & Virtualisierung</h3>
+                        <p id="skill-3-desc">Aufbau privater Virtualisierungsumgebungen mit Proxmox VE und Docker. Härtung von GrapheneOS, Integration von Tails OS und TOR-Routing.</p>
+                        <div class="skill-tags" id="skill-3-tags">
                             <span class="tag">Proxmox VE</span>
                             <span class="tag">Docker</span>
                             <span class="tag">GrapheneOS</span>
@@ -150,11 +150,11 @@
                         </div>
                     </div>
 
-                    <div class="skill-category-card glass-card" data-tech-category="automation">
-                        <div class="category-icon"><i class="fa-solid fa-gears"></i></div>
-                        <h3>Qualitätsmanagement & Automatisierung</h3>
-                        <p>Strukturierte Qualitätssicherungsverfahren zur Fehlerreduktion und Einhaltung von QM-Vorgaben. Automatisierungskonzepte mit Python, C++, Bash-Skripten, PHP und Perl.</p>
-                        <div class="skill-tags">
+                    <div class="skill-category-card glass-card">
+                        <div class="category-icon" id="skill-4-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3 id="skill-4-title">Qualitätsmanagement & Automatisierung</h3>
+                        <p id="skill-4-desc">Strukturierte Qualitätssicherungsverfahren zur Fehlerreduktion und Einhaltung von QM-Vorgaben. Automatisierungskonzepte mit Python, C++, Bash-Skripten, PHP und Perl.</p>
+                        <div class="skill-tags" id="skill-4-tags">
                             <span class="tag">Python / C++</span>
                             <span class="tag">Bash Scripting</span>
                             <span class="tag">QM / Fehleranalyse</span>
@@ -170,9 +170,9 @@
         <section id="experience" class="experience-section">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-tag">Werdegang</span>
-                    <h2 class="section-title">Beruflicher Werdegang</h2>
-                    <p class="section-desc">Konsequente Praxiserfahrung in Systemadministration, Qualitätssicherung und industrieller Automatisierung.</p>
+                    <span class="section-tag" id="exp-tag">Werdegang</span>
+                    <h2 class="section-title" id="exp-main-title">Beruflicher Werdegang</h2>
+                    <p class="section-desc" id="exp-main-desc">Konsequente Praxiserfahrung in Systemadministration, Qualitätssicherung und industrieller Automatisierung.</p>
                 </div>
 
                 <div class="timeline">
@@ -180,9 +180,9 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content glass-card">
                             <span class="timeline-date">2000 - Heute</span>
-                            <h3>System-, Edge-Firewall- & VPN-Administration</h3>
-                            <p class="timeline-company">Private non-monetäre Großprojekte (Vollzeitfokus 2012–2014)</p>
-                            <p>Aufbau und Absicherung komplexer Linux-Serverlandschaften sowie redundanter Edge-Firewalls und VPN-Gateways auf OpenBSD-Basis (PF, IPsec/WireGuard). Implementierung restriktiver OPNsense/VyOS-Systeme, VLAN-Segmentierung und kontinuierliche Protokollanalyse.</p>
+                            <h3 id="exp-1-title">System-, Edge-Firewall- & VPN-Administration</h3>
+                            <p class="timeline-company" id="exp-1-comp">Private non-monetäre Großprojekte (Vollzeitfokus 2012–2014)</p>
+                            <p id="exp-1-desc">Aufbau und Absicherung komplexer Linux-Serverlandschaften sowie redundanter Edge-Firewalls und VPN-Gateways auf OpenBSD-Basis (PF, IPsec/WireGuard). Implementierung restriktiver OPNsense/VyOS-Systeme, VLAN-Segmentierung und kontinuierliche Protokollanalyse.</p>
                         </div>
                     </div>
 
@@ -190,9 +190,9 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content glass-card">
                             <span class="timeline-date">2014 - 2021</span>
-                            <h3>Qualitätssicherung & Qualitätsmanagement</h3>
-                            <p class="timeline-company">SVB Personalleasing (Automobilfertigungslinien)</p>
-                            <p>Strukturierte Einhaltung strenger Qualitätsvorgaben, Fehlerreduktion und Qualitätssicherungsmaßnahmen zur Prozessstabilität in Fertigungslinien.</p>
+                            <h3 id="exp-2-title">Qualitätssicherung & Qualitätsmanagement</h3>
+                            <p class="timeline-company" id="exp-2-comp">SVB Personalleasing (Automobilfertigungslinien)</p>
+                            <p id="exp-2-desc">Strukturierte Einhaltung strenger Qualitätsvorgaben, Fehlerreduktion und Qualitätssicherungsmaßnahmen zur Prozessstabilität in Fertigungslinien.</p>
                         </div>
                     </div>
 
@@ -200,9 +200,9 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content glass-card">
                             <span class="timeline-date">2010 - 2012</span>
-                            <h3>Roboterprogrammierung & Automatisierung</h3>
-                            <p class="timeline-company">Atlantec Braunschweig</p>
-                            <p>Hardwarenahe Steuerungscode-Entwicklung für Industrieroboter und Anpassung komplexer automatisierter Bewegungsabläufe.</p>
+                            <h3 id="exp-3-title">Roboterprogrammierung & Automatisierung</h3>
+                            <p class="timeline-company" id="exp-3-comp">Atlantec Braunschweig</p>
+                            <p id="exp-3-desc">Hardwarenahe Steuerungscode-Entwicklung für Industrieroboter und Anpassung komplexer automatisierter Bewegungsabläufe.</p>
                         </div>
                     </div>
                 </div>
@@ -280,6 +280,7 @@
             <p>&copy; 2026 Daniel Rudnicki. Alle Rechte vorbehalten. | <a href="#about">Impressum</a> | <a href="#about">Datenschutz</a></p>
         </div>
     </footer>
+    <script src="/static/content.js"></script>
     <script src="/static/script.js"></script>
 </body>
 </html>
