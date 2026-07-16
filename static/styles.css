@@ -432,6 +432,25 @@ body.theme-handwerk .glass-bg {
     background: radial-gradient(circle at center, rgba(234, 88, 12, 0.05) 0%, rgba(255, 247, 237, 1) 50%);
 }
 
+/* Theme: IT / Cybersecurity (Default) */
+body.theme-it {
+    --bg-dark: #050b14;
+    --bg-card: rgba(10, 15, 30, 0.85);
+    --bg-card-hover: rgba(13, 20, 40, 1);
+    --primary: #00f0ff;
+    --primary-glow: rgba(0, 240, 255, 0.4);
+    --secondary: #d900ff;
+    --secondary-glow: rgba(217, 0, 255, 0.3);
+    --text-primary: #e0f2fe;
+    --text-secondary: #38bdf8;
+    --text-muted: #94a3b8;
+    --border-color: rgba(0, 240, 255, 0.2);
+    --border-color-hover: rgba(217, 0, 255, 0.5);
+}
+body.theme-it .glass-bg {
+    background: radial-gradient(circle at center, rgba(0, 240, 255, 0.07) 0%, rgba(5, 11, 20, 1) 50%);
+}
+
 .badge-dot {
     width: 8px;
     height: 8px;

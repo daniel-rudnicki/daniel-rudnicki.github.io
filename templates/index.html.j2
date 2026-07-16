@@ -26,13 +26,13 @@
                 <span class="logo-accent">&lt;</span> DR.ADMIN <span class="logo-accent">/&gt;</span>
             </a>
             <nav class="nav-menu">
-                <a href="#about" class="nav-link active">Über mich</a>
-                <a href="#skills" class="nav-link">Kompetenzen</a>
-                <a href="#experience" class="nav-link">Werdegang</a>
-                <a href="#contact" class="nav-link">Kontakt</a>
+                <a href="#about" class="nav-link active">{{ t.nav_about }}</a>
+                <a href="#skills" class="nav-link">{{ t.nav_skills }}</a>
+                <a href="#experience" class="nav-link">{{ t.nav_exp }}</a>
+                <a href="#contact" class="nav-link">{{ t.nav_contact }}</a>
             </nav>
             <div class="nav-cta">
-                <a href="#contact" class="btn btn-outline btn-sm">Bewerbung anfordern</a>
+                <a href="#contact" class="btn btn-outline btn-sm">{{ t.cta_req }}</a>
             </div>
         </div>
     </header>
@@ -46,27 +46,25 @@
                         {% if company %}
                         <div class="greeting-badge" id="dynamic-badge" style="display: inline-flex;">
                             <span class="badge-dot"></span>
-                            <span class="badge-text" id="dynamic-badge-text">{{ company }} Zugang</span>
+                            <span class="badge-text" id="dynamic-badge-text">{{ company }} {{ t.zugang }}</span>
                         </div>
                         {% endif %}
                         
                         <h1 class="hero-title">
-                            Hallo, ich bin <span class="text-gradient">Daniel Rudnicki</span>
+                            {{ t.hello }} <span class="text-gradient">Daniel Rudnicki</span>
                         </h1>
                         <h2 class="hero-subtitle" id="dynamic-subtitle">{{ subtitle }}</h2>
                         
                         <!-- Dynamic Personalized Message -->
-                        {% if recruiter or company %}
+                        {% if company or t.msg %}
                         <div class="personalization-banner" id="personalization-box" style="display: block;">
                             <div class="banner-content">
                                 <i class="fas fa-handshake"></i>
                                 <div class="banner-text">
-                                    <strong>Speziell für {{ company }}</strong>
-                                    {% if recruiter %}
-                                    <p>Sehr geehrte/r {{ recruiter }}, vielen Dank für Ihr Interesse an meinem Profil. Ich habe diese Mappe speziell auf die Anforderungen Ihrer Vakanz {% if job %}als <strong>{{ job }}</strong> {% endif %}abgestimmt.</p>
-                                    {% else %}
-                                    <p>Vielen Dank für Ihr Interesse an meinem Profil. Ich habe diese Mappe speziell auf Ihre Anforderungen abgestimmt.</p>
+                                    {% if company %}
+                                    <strong>{{ t.spec_for }} {{ company }}</strong>
                                     {% endif %}
+                                    <p>{{ t.msg }}</p>
                                 </div>
                             </div>
                         </div>
@@ -75,8 +73,8 @@
                         <p class="hero-description" id="dynamic-description">{{ description }}</p>
                         
                         <div class="hero-actions">
-                            <a href="#projects" class="btn btn-primary">Projekte ansehen</a>
-                            <a href="#contact" class="btn btn-outline">Kontakt aufnehmen</a>
+                            <a href="#projects" class="btn btn-primary">{{ t.proj_btn }}</a>
+                            <a href="#contact" class="btn btn-outline">{{ t.cont_btn }}</a>
                         </div>
                     </div>
                     
@@ -90,36 +88,23 @@
             </div>
         </section>
 
-                <div class="hero-stats-card glass-card">
-                    <div class="card-glow"></div>
-                    <div class="logo-container">
-                        <img src="/static/daniel_rudnicki_logo.png" alt="Daniel Rudnicki Signature Logo" class="profile-logo">
-                    </div>
-                    <div class="stats-header">
-                        <span class="status-indicator online"></span>
-                        <h3>System Status: Active</h3>
-                    </div>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-value">24+</span>
-                            <span class="stat-label">Jahre OS-Fokus</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">Level 2</span>
-                            <span class="stat-label">CIS-Härtungskonform</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">100%</span>
-                            <span class="stat-label">Open-Source Härtung</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">VLAN/VPN</span>
-                            <span class="stat-label">Netzwerk-Segmentierung</span>
-                        </div>
-                    </div>
+        <div class="hero-stats-card glass-card">
+            <div class="card-glow"></div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-value">24+</span>
+                    <span class="stat-label">{{ t.stat_exp }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">50+</span>
+                    <span class="stat-label">{{ t.stat_proj }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">{{ t.stat_cli }}</span>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- Technical Skills Section -->
         <section id="skills" class="skills-section">
